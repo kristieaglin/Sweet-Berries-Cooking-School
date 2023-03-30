@@ -1,0 +1,162 @@
+:root {
+    --taupe: #F5F3EF;
+    --white: #FFFFFF;
+    --orange: #FEBD2F;
+    --black: #000000;
+    --darkgray: #646464;
+    --lightgray: #DCDCDC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 80px 500px auto 80px;
+    grid-template-areas: 
+    "header header header header"
+    "banner banner banner banner"
+    "cards cards cards cards"
+    "footer footer footer footer";
+}
+
+/*              HEADER             */
+
+header {
+    grid-area: header;
+    display: flex;
+    width: auto;
+    padding: 0 60px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--taupe);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.lft-btn {
+    border: none;
+    background-color: var(--taupe);
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+nav img {
+  
+}
+
+.rt-button {
+    border: none;
+    color: var(--white);
+    background-color: var(--black);
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 15px 25px;
+    border-radius: 30px;
+}
+
+/*              BANNER              */
+
+.banner {
+    background-color: var(--taupe);
+    grid-area: banner;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.banner-txt {
+    width: 40%;
+    
+}
+
+.banner h1 {
+    font-family: Roboto Serif;
+    font-size: 64px;
+    font-weight: 500;
+}
+
+.banner p {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.banner img {
+    width: 600px;
+    height: 440px;
+}
+
+/*              CARDS                */
+
+.card-container {
+    background-color: var(--taupe);
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 60px;
+}
+
+.card-1 {
+    background-color: var(--orange);
+    border-radius: 30px;
+    display: flex;
+    justify-content: left;
+    padding: 45px;
+    font-family: Roboto Serif;
+    font-size: 40px;
+    font-weight: 500;
+    height: 325px;
+    width: 400px;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 30px;
+    height: 325px;
+    width: 400px;
+    padding: 40px;
+}
+
+.card h3 {
+    font-family: Roboto Serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card p {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.card button {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 50px;
+    padding: 10px 25px;
+    background-color: var(--white);
+    border: 1px solid var(--lightgray);
+}
+
+/*              FOOTER              */
+
+footer {
+    background-color: var(--orange);
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+}
