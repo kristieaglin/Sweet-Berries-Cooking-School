@@ -7,6 +7,7 @@
     --lightgray: #DCDCDC;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +17,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 80px 500px auto 80px;
+    grid-template-rows: 80px auto auto 80px;
     grid-template-areas: 
     "header header header header"
     "banner banner banner banner"
@@ -30,7 +31,7 @@ header {
     grid-area: header;
     display: flex;
     width: auto;
-    padding: 0 60px;
+    padding: 20px 100px;
     justify-content: space-between;
     align-items: center;
     background-color: var(--taupe);
@@ -48,10 +49,6 @@ nav {
     font-family: Roboto;
     font-weight: 500;
     font-size: 16px;
-}
-
-nav img {
-  
 }
 
 .rt-button {
@@ -73,12 +70,15 @@ nav img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px;
+    padding: 30px 100px;
 }
 
 .banner-txt {
     width: 40%;
-    
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .banner h1 {
@@ -105,8 +105,8 @@ nav img {
     grid-area: cards;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-    padding: 60px;
+    gap: 75px 35px;
+    padding: 100px;
 }
 
 .card-1 {
@@ -127,7 +127,13 @@ nav img {
     border-radius: 30px;
     height: 325px;
     width: 400px;
-    padding: 40px;
+    padding: 40px 40px 25px 40px;
+}
+
+.card img {
+    position: relative;
+    left: 240px;
+    bottom: 330px;
 }
 
 .card h3 {
@@ -150,6 +156,15 @@ nav img {
     padding: 10px 25px;
     background-color: var(--white);
     border: 1px solid var(--lightgray);
+}
+
+.card-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 95%;
+    
 }
 
 /*              FOOTER              */
