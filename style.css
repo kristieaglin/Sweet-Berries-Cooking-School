@@ -16,13 +16,13 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 80px auto auto 80px;
     grid-template-areas: 
-    "header header header header"
-    "banner banner banner banner"
-    "cards cards cards cards"
-    "footer footer footer footer";
+    "header header header"
+    "banner banner banner"
+    "cards cards cards"
+    "footer footer footer";
 }
 
 /*              HEADER             */
@@ -96,8 +96,8 @@ nav {
 }
 
 .banner img {
-    width: 600px;
-    height: 440px;
+    width: 45%;
+    height: auto;
 }
 
 /*              CARDS                */
@@ -109,7 +109,6 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     gap: 75px 35px;
     padding: 50px 100px 100px 155px;
-    
 }
 
 .card-1 {
@@ -186,6 +185,55 @@ footer {
 
 /*              MEDIA QUERY             */
 
-@media screen and (max-width: 480px) {
-    
+@media screen and (max-width: 1300px) {
+    header {
+        padding: 20px 100px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 50px 100px 100px 100px;
+    }
+
+    .banner {
+        flex-direction: column;
+        padding: 50px 100px;
+    }
+
+    .banner-txt {
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .banner h1, .banner p {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .banner img {
+        width: 100%;
+        padding: 50px 0 15px 0;
+    }
 }
+
+@media screen and (max-width: 1024px) {
+    header {
+        background-color: purple;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        background-color: aquamarine;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        background-color: red;
+    }
+}
+
