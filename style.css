@@ -17,11 +17,12 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 80px auto auto 80px;
+    grid-template-rows: 80px auto auto 80px 80px;
     grid-template-areas: 
     "header header header"
     "banner banner banner"
     "cards cards cards"
+    "button button button"
     "footer footer footer";
 }
 
@@ -37,18 +38,18 @@ header {
     background-color: var(--taupe);
 }
 
-nav {
+.menu {
     display: flex;
     justify-content: space-between;
     width: 175px;
 }
 
-.lft-btn {
-    border: none;
-    background-color: var(--taupe);
+.menu a {
     font-family: Roboto;
     font-weight: 500;
     font-size: 16px;
+    text-decoration: none;
+    color: var(--black);
 }
 
 .rt-button {
@@ -60,6 +61,15 @@ nav {
     font-size: 16px;
     padding: 15px 25px;
     border-radius: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+#hamburger {
+    display: none;
 }
 
 /*              BANNER              */
@@ -105,10 +115,11 @@ nav {
 .card-container {
     background-color: var(--taupe);
     grid-area: cards;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 75px 35px;
-    padding: 50px 100px 100px 155px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 75px 25px;
+    padding: 50px 100px 25px 100px;
 }
 
 .card-1 {
@@ -122,20 +133,20 @@ nav {
     font-weight: 500;
     line-height: 47px;
     height: 325px;
-    width: 400px;
+    width: 375px;
 }
 
 .card {
     background-color: var(--white);
     border-radius: 30px;
     height: 325px;
-    width: 400px;
+    width: 375px;
     padding: 35px 40px 25px 40px;
 }
 
 .card img {
     position: relative;
-    left: 245px;
+    left: 225px;
     bottom: 325px;
 }
 
@@ -163,6 +174,7 @@ nav {
     padding: 10px 25px;
     background-color: var(--white);
     border: 1px solid var(--lightgray);
+    cursor: pointer;
 }
 
 .card-display {
@@ -172,6 +184,27 @@ nav {
     align-items: flex-start;
     height: 95%;
     
+}
+
+.top-button {
+    border: none;
+    color: var(--white);
+    background-color: var(--black);
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.button {
+    grid-area: button;
+    background-color: var(--taupe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
 }
 
 /*              FOOTER              */
@@ -185,14 +218,13 @@ footer {
 
 /*              MEDIA QUERY             */
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1250px) {
     header {
         padding: 20px 100px;
     }
 
     .card-container {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 50px 100px 100px 100px;
+        padding: 50px 100px 25px 100px;
     }
 
     .banner {
@@ -214,26 +246,133 @@ footer {
     }
 
     .banner img {
-        width: 100%;
+        width: 80%;
         padding: 50px 0 15px 0;
     }
-}
 
-@media screen and (max-width: 1024px) {
-    header {
-        background-color: purple;
+    .banner h1 {
+        font-size: 48px;
+    }
+
+    .banner p {
+        font-size: 20px;
+    }
+
+    .card-1 {
+        font-size: 32px;
+        line-height: 37px;
+        height: 300px;
+        width: 330px;
+    }
+
+    .card {
+        height: 300px;
+        width: 330px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+        line-height: 23px;
+    }
+    
+    .card p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    
+    .card button {
+        font-size: 16px;
+    }
+
+    .card img {
+        bottom: 300px;
+        left: 185px;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 790px) {
     header {
-        background-color: aquamarine;
+        flex-direction: row-reverse;
+        padding: 20px 50px;
     }
-}
 
-@media screen and (max-width: 480px) {
-    header {
-        background-color: red;
+    .menu {
+        display: none;
     }
-}
 
+    .rt-button {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: block;
+        font-size: 40px;
+    }
+
+    #hamburger:checked + .menu {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        background-color: var(--orange);
+    }
+
+    .menu a {
+        padding: 15px 0;
+        font-size: 18px;
+    }
+
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+
+    .banner {
+        padding: 30px 50px;
+    }
+
+    .card-container {
+        padding: 50px 50px 25px 50px;
+        justify-content: center;
+    }
+
+    .card {
+        height: 275px;
+    }
+
+    .card img {
+        bottom: 280px;
+        left: 185px;
+    }
+
+    .card-1 {
+        height: 130px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+        line-height: 23px;
+    }
+    
+    .card p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .card button {
+        font-size: 16px;
+    }
+
+}
