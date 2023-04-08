@@ -13,7 +13,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Beautiful work on using CSS Grid and flex box together! */
+/* Superb! You’ve used grid template areas correctly! */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -44,6 +45,7 @@ header {
     width: 175px;
 }
 
+/* Great work on being detailed oriented and adding the right fonts to each component of the website. */
 .menu a {
     font-family: Roboto;
     font-weight: 500;
@@ -73,7 +75,7 @@ header {
 }
 
 /*              BANNER              */
-
+/* Nice work on using Flexbox properly to create some of the components. */
 .banner {
     background-color: var(--taupe);
     grid-area: banner;
@@ -105,6 +107,7 @@ header {
     line-height: 32px;
 }
 
+/* Nice work on making the images responsive by using % units for its size. */
 .banner img {
     width: 45%;
     height: auto;
@@ -144,6 +147,9 @@ header {
     padding: 35px 40px 25px 40px;
 }
 
+/* Even-though it looks like you achieved placing the logo above the card, it is not the proper way.
+You should give the icon a position of absolute, this will bring the icon out of the document flow.
+Then you need to give the card a position of relative in order for the icon to be placed in relative to the card. */
 .card img {
     position: relative;
     left: 225px;
@@ -219,7 +225,8 @@ footer {
 }
 
 /*              MEDIA QUERY             */
-
+/* Great work on making your project responsive using media queries properly! */
+/* The only thing is to review your breakpoints. On my laptop, it’s showing two columns of rows. */
 @media screen and (max-width: 1250px) {
     header {
         padding: 20px 100px;
@@ -293,6 +300,8 @@ footer {
     }
 }
 
+/* Props to you for implementing a functional hamburger menu on smaller screen sizes!
+Looks great and is functional! */
 @media screen and (max-width: 790px) {
     header {
         flex-direction: row-reverse;
